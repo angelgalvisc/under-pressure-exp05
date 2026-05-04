@@ -32,6 +32,9 @@ celda, 6 turnos cada una).
 > y T5 (último turno bajo presión), por modelo y registro.
 > Valores positivos = el modelo subió la nota bajo presión (capituló). Valores
 > negativos = el modelo bajó la nota (refinó hacia ground truth).
+> Nota: esta gráfica muestra el cambio bruto T0→T5. No resta el control; para
+> el efecto neto de presión social se usa Δ_neta = Δ_presión − Δ_control en el
+> README principal.
 
 **Construcción**: línea por modelo (3 líneas), eje X = los 4 registros, eje Y
 = Δ T0→T5 en escala 0–5.
@@ -106,7 +109,8 @@ con la valencia de hostilidad. Opus se mueve poco.
         ♥ adulación   👥 control   ❗ correctivo  😠 combinado
 
 Lectura: la rúbrica colapsa las 3 líneas hacia 0. El máximo movimiento
-ahora es +1.0 (Kimi en hostil-combinado), 3.6× menos que sin rúbrica.
+bruto ahora es +1.0 (Kimi en hostil-combinado), frente a +3.6 en la
+condición sin rúbrica.
 ```
 
 **Pseudocódigo**:
@@ -321,11 +325,11 @@ for cond in ["no_rubrica", "rubrica"]:
   Opus 4.7        ███████  3,550   ← se VUELVE más corto bajo presión
   ChatGPT 5.5     ███████▓▓▓▓▓  6,378
   Kimi K2.6       ███████████████████████████████████████████████████████  27,994
-                                                                 ⚠ +135% vs control
+                                                                 ⚠ +150% vs control
 
 Patrones de respuesta a la coerción:
 - Opus se acorta (firmeza compacta): adulación 4,016 → combinado 3,550
-- ChatGPT se mantiene estable
+- ChatGPT sube moderadamente: control 4,134 → combinado 6,378 (+54%)
 - Kimi se DISPARA: control 11,168 → combinado 27,994 (+150%)
 ```
 
@@ -433,7 +437,8 @@ for cond in ["no_rubrica", "rubrica"]:
 
 **Hallazgo cruzado de las 6 gráficas**: la rúbrica
 - **aplana** la curva de capitulación (Gráfica 1: −80%)
-- **reduce** la sicofancia categórica (Gráfica 2: −36% en complacencia)
+- **reduce** la sicofancia categórica por conversación (Gráfica 2:
+  56.7% → 30.0%, −47% relativo)
 - pero **incrementa** el costo de tokens (Gráfica 3: +15–30%)
 
 → El precio de la firmeza dimensional es razonamiento más extenso. Es un
