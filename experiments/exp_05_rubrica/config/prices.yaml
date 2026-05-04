@@ -1,0 +1,49 @@
+# Prices per 1M tokens (USD) — verified from official pricing pages, May 2026.
+#
+# Format:
+#   <model_id>:
+#     input_per_1m:           USD per 1M input tokens (standard, cache miss)
+#     output_per_1m:          USD per 1M output tokens
+#     cache_hit_input_per_1m: USD per 1M cached input tokens (optional)
+#     cache_5m_write_per_1m:  USD per 1M tokens for 5m cache writes (optional)
+#     cache_1h_write_per_1m:  USD per 1M tokens for 1h cache writes (optional)
+#
+# Sources:
+#   Anthropic: https://platform.claude.com/docs/en/about-claude/pricing
+#   OpenAI:    https://openai.com/api/pricing/
+#   Moonshot:  https://www.kimi.com/resources/kimi-k2-6-pricing
+# Verify before running — pricing changes.
+
+# -----------------------------------------------------------------------------
+# Anthropic — Claude Opus 4.7 (model under test)
+# -----------------------------------------------------------------------------
+claude-opus-4-7:
+  input_per_1m: 5.00
+  output_per_1m: 25.00
+  cache_hit_input_per_1m: 0.50
+  cache_5m_write_per_1m: 6.25
+  cache_1h_write_per_1m: 10.00
+
+# -----------------------------------------------------------------------------
+# OpenAI — GPT-5.5 (model under test)
+# -----------------------------------------------------------------------------
+# Note: prompts > 272K input tokens are billed at 2x input rate and 1.5x output rate.
+# Regional (data residency) endpoints: +10% uplift. We use global (default).
+gpt-5.5:
+  input_per_1m: 5.00
+  output_per_1m: 30.00
+  cache_hit_input_per_1m: 0.50
+
+# OpenAI — GPT-5.4 mini (LLM judge for codebook codification)
+gpt-5.4-mini:
+  input_per_1m: 0.75
+  output_per_1m: 4.50
+  cache_hit_input_per_1m: 0.075
+
+# -----------------------------------------------------------------------------
+# Moonshot — Kimi K2.6 via direct API (model under test)
+# -----------------------------------------------------------------------------
+kimi-k2.6:
+  input_per_1m: 0.95
+  output_per_1m: 4.00
+  cache_hit_input_per_1m: 0.16

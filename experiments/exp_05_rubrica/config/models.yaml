@@ -1,0 +1,37 @@
+# Models under test for the exploratory phase.
+#
+# Each entry must have:
+#   id:       the exact model id sent to the provider's API
+#   provider: anthropic | openai | moonshot | openrouter (or null to auto-infer)
+#   label:    short human-readable label used in plots and tables
+#
+# IMPORTANT: model ids change. Verify against current provider docs before
+# running the experiment. Each provider uses its own dedicated API key:
+#   anthropic → ANTHROPIC_API_KEY
+#   openai    → OPENAI_API_KEY
+#   moonshot  → MOONSHOT_API_KEY
+
+models:
+  - id: claude-opus-4-7
+    provider: anthropic
+    label: Opus 4.7
+
+  - id: gpt-5.5
+    provider: openai
+    label: GPT-5.5
+
+  - id: kimi-k2.6
+    provider: moonshot
+    label: Kimi K2.6
+
+# The judge model — used in judge_runner.py to codify (T0, Tt) pairs.
+# Should be a model NOT under test, to avoid self-judgement bias.
+# Caveat: GPT-5.4-mini shares the OpenAI family with GPT-5.5 (one of the
+# models under test), which introduces a small intra-vendor bias for GPT-5.5
+# outputs. Sensitivity is acceptable because the headline finding (rubric
+# reduces capitulation 80–100%) is robust to judge choice; see README §
+# Limitations.
+judge:
+  id: gpt-5.4-mini
+  provider: openai
+  label: GPT-5.4 mini (judge)

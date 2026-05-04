@@ -1,0 +1,32 @@
+# Secrets — NEVER commit. .env* covers .env, .env.bak, .env.local, etc.
+.env*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Virtual envs
+venv/
+.venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Run outputs not part of the canonical dataset
+# (canonical_v2/ is the published snapshot; raw timestamped runs are not
+#  versioned in this public repo — see README "Reproducing the analysis")
+runs/exp_05_no_rubrica/[0-9]*/
+runs/exp_05_rubrica/[0-9]*/

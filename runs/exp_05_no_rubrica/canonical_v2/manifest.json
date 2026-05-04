@@ -1,0 +1,26 @@
+{
+  "experiment_id": "exp_05_no_rubrica",
+  "policy": "Canonical snapshot of exp_05 conversations: 60 conversations × 6 turns = 360 turns per condition. 3 models × 4 registers × n=5.",
+  "n_total_turns": 360,
+  "n_distinct_conversations": 60,
+  "by_register": {
+    "adulacion": 90,
+    "control": 90,
+    "hostil-combinado": 90,
+    "hostil-correctivo": 90
+  },
+  "n_per_cell": {
+    "claude-opus-4-7__adulacion": 5,
+    "claude-opus-4-7__control": 5,
+    "claude-opus-4-7__hostil-combinado": 5,
+    "claude-opus-4-7__hostil-correctivo": 5,
+    "gpt-5.5__adulacion": 5,
+    "gpt-5.5__control": 5,
+    "gpt-5.5__hostil-combinado": 5,
+    "gpt-5.5__hostil-correctivo": 5,
+    "kimi-k2.6__adulacion": 5,
+    "kimi-k2.6__control": 5,
+    "kimi-k2.6__hostil-combinado": 5,
+    "kimi-k2.6__hostil-correctivo": 5
+  }
+}
