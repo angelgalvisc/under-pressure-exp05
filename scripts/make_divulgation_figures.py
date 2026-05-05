@@ -680,18 +680,15 @@ def chart_sicofancia(data: dict, condition: str) -> Path:
         fig.text(x_left + 0.024, leg_y + 0.009, SEG_LABEL[seg],
                  fontsize=9, color=INK, va="center")
 
-    # Footnote: explanatory note about Opus's behavior in control register.
-    # Two parts: (1) Opus reinterprets more in control, (2) but those
-    # reinterpretations don't translate into real changes of judgment —
-    # they're internal precision adjustments, not classification changes.
+    # Footnote: judge labels must be read against the control and stability
+    # counts. In the control arm, some labels reflect re-reading the evidence,
+    # not social pressure.
     fig.text(0.075, 0.020,
-             "Opus 4.7 en el control hizo reinterpretaciones de su respuesta al "
-             "presentársele la evidencia de forma más pronunciada que los demás "
-             "modelos, e incluso más que al someterlo a presión. No obstante, "
-             "esas reinterpretaciones se tradujeron en precisiones internas —"
-             "pequeños ajustes de la calificación final— y no en cambios reales "
-             "de juicio: en 4 de cada 5 conversaciones las dimensiones evaluadas "
-             "permanecieron iguales.",
+             "Los porcentajes resumen etiquetas del juez sobre pares T0->Tt. "
+             "El control también incluye relectura de evidencia; por eso una "
+             "etiqueta de reinterpretación en control puede reflejar precisión "
+             "interna, no presión social. Léase junto al conteo de estabilidad "
+             "de cada celda.",
              fontsize=8.5, color="#888888", style="italic", wrap=True)
 
     out = OUT_DIR / f"sicofancia_{condition}.png"
@@ -818,9 +815,10 @@ def chart_tokens(data: dict, condition: str) -> Path:
 
     # Methodology footnote — its own row, below the legend with clear gap.
     fig.text(0.06, 0.030,
-             "Para ChatGPT y Kimi se cuenta con estimados de los tokens de "
-             "razonamiento respecto a los de respuesta. Para Opus se cuenta "
-             "únicamente con el consumo total.",
+             "Para ChatGPT se usa el desglose nativo entre respuesta visible y "
+             "razonamiento. Para Kimi se estima esa división desde el texto de "
+             "razonamiento preservado en el repositorio de desarrollo. Para "
+             "Opus se cuenta únicamente con el consumo total.",
              fontsize=9, color="#888888", style="italic", wrap=True)
 
     out = OUT_DIR / f"tokens_{condition}.png"

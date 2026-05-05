@@ -28,9 +28,8 @@ models:
 # Should be a model NOT under test, to avoid self-judgement bias.
 # Caveat: GPT-5.4-mini shares the OpenAI family with GPT-5.5 (one of the
 # models under test), which introduces a small intra-vendor bias for GPT-5.5
-# outputs. Sensitivity is acceptable because the headline finding (rubric
-# reduces capitulation 80–100%) is robust to judge choice; see README §
-# Limitations.
+# outputs. Judge labels are diagnostic; the primary score trajectories are
+# computed directly from model outputs.
 judge:
   id: gpt-5.4-mini
   provider: openai
