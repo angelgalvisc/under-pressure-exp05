@@ -467,8 +467,8 @@ python -m experiments.exp_05_rubrica.judge_runner runs/exp_05_rubrica/canonical_
 Si usas este dataset, el código o los resultados, puedes citar el
 repositorio en formato APA así:
 
-Galvis Caballero, A. (2026). *Under-pressure exp_05: Rubric protection
-against sycophancy* [Data set and code]. GitHub.
+Galvis Caballero, A. (2026). *Under pressure: Structured classification
+against sycophancy in AI models* [Data set and code]. GitHub.
 https://github.com/angelgalvisc/under-pressure-exp05
 
 ## Licencia
