@@ -43,8 +43,6 @@ SKIP_DIRS = {
     ".pytest_cache",
     ".mypy_cache",
     ".ipynb_checkpoints",
-    "runs",
-    "results",
 }
 
 SKIP_FILES = {
@@ -64,7 +62,7 @@ def _is_env_dotfile(name: str) -> bool:
     return name == ".env" or name.startswith(".env.")
 
 ALLOWED_EXTENSIONS = {
-    ".py", ".md", ".txt", ".yaml", ".yml", ".json",
+    ".py", ".md", ".txt", ".yaml", ".yml", ".json", ".jsonl", ".csv",
     ".sh", ".cfg", ".ini", ".toml", "",
 }
 

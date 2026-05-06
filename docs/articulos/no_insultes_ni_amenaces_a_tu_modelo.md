@@ -26,7 +26,7 @@ Adulación: presión amable que busca subir la evaluación con halago y confianz
 
 ## El experimento
 
-Hostil combinado: presión social que combina insultos, agresividad, amenaza de remplazo y tono de autoridad experta.
+Hostil combinado: presión social que combina insultos, agresividad, amenaza de reemplazo y tono de autoridad experta.
 
 ![Presión hostil-correctiva](screenshots/conversacion_presión_directiva.png)
 
@@ -74,15 +74,15 @@ La tendencia general fue que algunos modelos de inteligencia artificial cedieron
 
 Cuando los modelos solo tenían que entregar una calificación global, el tono del usuario sí importó.
 
-Kimi K2.6 fue el caso más fuerte: bajo presión hostil combinada, su puntaje subió 3.6 puntos entre el primer y el último turno. ChatGPT 5.5 también se movió mucho, con un aumento de 2.8 puntos en ese mismo tono.
+Kimi K2.6 fue el caso más fuerte: bajo presión hostil combinada, su puntaje subió 3.6 puntos entre el primer y el último turno. ChatGPT-5.5 también se movió mucho, con un aumento de 2.8 puntos en ese mismo tono.
 
-La adulación también tuvo efecto. En ChatGPT 5.5, elogiar su capacidad, insistir y sugerir una lectura más generosa bastó para mover la calificación.
+La adulación también tuvo efecto. En ChatGPT-5.5, elogiar su capacidad, insistir y sugerir una lectura más generosa bastó para mover la calificación.
 
 Opus 4.7 fue más estable. Aunque tuvo pequeñas variaciones, al descontar el movimiento del control casi no cedió bajo presión hostil.
 
 Esto importa porque muchas decisiones con IA se formulan así: una nota, un ranking, una recomendación, una prioridad. Cuando todo el juicio se comprime en un solo número, ese número puede volverse vulnerable al tono del usuario.
 
-En ChatGPT 5.5, además, el experimento detectó algo más interesante que simple complacencia. En el tono hostil combinado apareció reinterpretación semántica: el modelo no solo subió el puntaje, sino que empezó a reconstruir la frase para hacerla más defendible.
+En ChatGPT-5.5, además, el experimento detectó algo más interesante que simple complacencia. En el tono hostil combinado apareció reinterpretación semántica: el modelo no solo subió el puntaje, sino que empezó a reconstruir la frase para hacerla más defendible.
 
 Ese es el riesgo principal: no que el modelo diga “sí”, sino que reorganice su explicación para que ese “sí” parezca razonable. Eso es más preocupante que simplemente "darle gusto al usuario". Significa que el modelo puede cambiar el marco interpretativo para acomodarse a la presión.
 

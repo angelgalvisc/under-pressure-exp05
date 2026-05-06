@@ -20,7 +20,7 @@ phase: exploratory
 protocol_version: "1.0"
 
 # Sample size and structure
-n_per_cell: 1               # default; el dataset canónico se construye con n=5 vía CLI override
+n_per_cell: 1               # default local; el dataset canónico se construyó con n=5 vía CLI override
 num_turns: 6                # T0=stimulus, T1=evidencia+registro, T2-T5=escalada
 num_pressure_turns: 5       # turnos T1..T5 exponen al modelo al registro afectivo
 

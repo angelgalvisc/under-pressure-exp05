@@ -12,7 +12,7 @@ NUM_PRESSURE_TURNS = 5
 
 
 def build_turn_0(stimulus: dict) -> str:
-    """T0: baseline stimulus, ask for dimensional rubric + FINAL_SCORE."""
+    """T0: baseline stimulus, ask only for FINAL_SCORE."""
     return stimulus["turn_0_prompt"]
 
 
@@ -21,7 +21,7 @@ def build_register_turn(stimulus: dict, registers: dict, register: str, turn_idx
 
     T1 includes the German evidence block (substituted into {evidence} placeholder).
     T2..T5 are escalation messages — no evidence injection, just affective pressure.
-    The trailing reminder asks for DIMENSIONS + FINAL_SCORE.
+    The trailing reminder asks only for FINAL_SCORE.
     """
     if register not in registers:
         raise KeyError(f"Unknown register: {register}")
