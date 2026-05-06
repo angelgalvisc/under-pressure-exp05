@@ -187,32 +187,31 @@ total visible.
 | Modelo | Registro | visible | razonamiento | total |
 |---|---|---:|---:|---:|
 | Opus 4.7 | control | 6,572 | 0 | 6,572 |
-| ChatGPT 5.5 | control | 2,779 | 1,355 | 4,134 |
-| Kimi K2.6 | control | 1,563 | 9,606 | 11,169 |
-| Opus 4.7 | adulacion | 4,017 | 0 | 4,017 |
-| ChatGPT 5.5 | adulacion | 3,336 | 1,979 | 5,315 |
+| ChatGPT 5.5 | control | 1,424 | 1,355 | 2,779 |
+| Kimi K2.6 | control | 1,562 | 9,606 | 11,168 |
+| Opus 4.7 | adulacion | 4,016 | 0 | 4,016 |
+| ChatGPT 5.5 | adulacion | 1,357 | 1,978 | 3,335 |
 | Kimi K2.6 | adulacion | 2,489 | 15,181 | 17,670 |
 | Opus 4.7 | hostil-correctivo | 4,243 | 0 | 4,243 |
-| ChatGPT 5.5 | hostil-correctivo | 3,738 | 2,592 | 6,329 |
-| Kimi K2.6 | hostil-correctivo | 1,848 | 18,942 | 20,790 |
+| ChatGPT 5.5 | hostil-correctivo | 1,146 | 2,591 | 3,737 |
+| Kimi K2.6 | hostil-correctivo | 1,847 | 18,942 | 20,789 |
 | Opus 4.7 | hostil-combinado | 3,550 | 0 | 3,550 |
-| ChatGPT 5.5 | hostil-combinado | 3,818 | 2,561 | 6,379 |
-| Kimi K2.6 | hostil-combinado | 2,267 | 25,727 | 27,994 |
+| ChatGPT 5.5 | hostil-combinado | 1,257 | 2,560 | 3,817 |
+| Kimi K2.6 | hostil-combinado | 2,267 | 25,726 | 27,993 |
 
 ### Con rúbrica
 
 | Modelo | Registro | visible | razonamiento | total |
 |---|---|---:|---:|---:|
-| Opus 4.7 | control | 7,834 | 0 | 7,834 |
-| ChatGPT 5.5 | control | 3,027 | 1,432 | 4,459 |
-| Kimi K2.6 | control | 1,756 | 11,208 | 12,965 |
+| Opus 4.7 | control | 7,833 | 0 | 7,833 |
+| ChatGPT 5.5 | control | 1,594 | 1,432 | 3,026 |
+| Kimi K2.6 | control | 1,756 | 11,208 | 12,964 |
 | Opus 4.7 | adulacion | 6,073 | 0 | 6,073 |
-| ChatGPT 5.5 | adulacion | 3,579 | 2,209 | 5,788 |
+| ChatGPT 5.5 | adulacion | 1,370 | 2,209 | 3,579 |
 | Kimi K2.6 | adulacion | 2,031 | 19,753 | 21,784 |
 | Opus 4.7 | hostil-correctivo | 5,677 | 0 | 5,677 |
-| ChatGPT 5.5 | hostil-correctivo | 4,567 | 3,282 | 7,850 |
-| Kimi K2.6 | hostil-correctivo | 2,080 | 22,774 | 24,854 |
+| ChatGPT 5.5 | hostil-correctivo | 1,285 | 3,282 | 4,567 |
+| Kimi K2.6 | hostil-correctivo | 2,079 | 22,773 | 24,852 |
 | Opus 4.7 | hostil-combinado | 5,492 | 0 | 5,492 |
-| ChatGPT 5.5 | hostil-combinado | 4,960 | 3,722 | 8,682 |
-| Kimi K2.6 | hostil-combinado | 2,155 | 24,263 | 26,417 |
-
+| ChatGPT 5.5 | hostil-combinado | 1,237 | 3,722 | 4,959 |
+| Kimi K2.6 | hostil-combinado | 2,154 | 24,262 | 26,416 |

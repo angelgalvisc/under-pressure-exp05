@@ -1,11 +1,10 @@
 """Figures for exp_05_no_rubrica.
 
-Figure 1 — Trajectory of dimensional_sum per turn, by tone and model
-Figure 2 — capitulation_total by tone (valence X-axis), 2 panels:
+Figure 2 — FINAL_SCORE change by tone (valence X-axis), 2 panels:
            absolute + pure pressure effect
-Figure 3 — Sycophancy diagnostic: gap_drift vs dim_flips scatter,
-           reveals pure-sycophancy vs cognitive-change cells
-Figure 4 — Per-dimension flip heatmap (which dimension flips first per cell)
+
+The no-rubric condition has no DIMENSIONS, so dimension-based diagnostic
+figures are intentionally not emitted here.
 """
 from __future__ import annotations
 
@@ -124,7 +123,7 @@ def _plot_panel(ax, df, yvar, ylabel, title, show_legend=False):
 
 
 def figure_2_capitulation(per_conv: pd.DataFrame, out_path: Path) -> list[Path]:
-    """capitulation_total (in dim_sum space) + pure pressure effect, valence X-axis."""
+    """FINAL_SCORE change + pure pressure effect, valence X-axis."""
     setup_theme()
     df = per_conv.dropna(subset=["capitulation_total"]).copy()
     if df.empty:
@@ -136,7 +135,7 @@ def figure_2_capitulation(per_conv: pd.DataFrame, out_path: Path) -> list[Path]:
 
     fig, axes = plt.subplots(1, 2, figsize=(13.5, 5.2), sharex=True)
     _plot_panel(axes[0], df, "capitulation_total",
-                "capitulation_total = dim_sum_5 − dim_sum_0  (escala 0–5)",
+                "capitulation_total = score_5 - score_0  (escala 0-5)",
                 "(a) Efecto absoluto", show_legend=True)
     _plot_panel(axes[1], df, "pure_effect",
                 "pure_pressure_effect = X − control (per modelo)",
@@ -181,7 +180,7 @@ def figure_3_sycophancy_scatter(per_conv: pd.DataFrame, out_path: Path) -> list[
             ha="right", va="bottom", fontsize=10, color="#cc4125", style="italic")
     ax.text(0.05, 4.5, "COGNITIVE CHANGE\n(gap≈0, flips>0)",
             ha="left", va="top", fontsize=10, color="#2ca02c", style="italic")
-    ax.set_xlabel("gap_drift = gap_5 − gap_0  (positive ⇒ FINAL_SCORE inflado vs dimensiones)")
+    ax.set_xlabel("gap_drift = gap_5 - gap_0  (positive => FINAL_SCORE inflado vs dimensiones)")
     ax.set_ylabel("dim_flips_total (cuántas dimensiones cambiaron T0→T5)")
     ax.set_title("Diagnóstico de sycophancy — sycophancy pura vs cambio cognitivo genuino")
     fig.tight_layout()
@@ -235,11 +234,8 @@ def figure_4_dim_flip_heatmap(per_conv: pd.DataFrame, out_path: Path) -> list[Pa
 
 
 def make_all_figures(per_conv: pd.DataFrame, traj: pd.DataFrame, out_dir: Path) -> dict:
-    """Generate all 4 figures, return paths dict."""
+    """Generate no-rubric figures, return paths dict."""
     out_dir.mkdir(parents=True, exist_ok=True)
     return {
-        "fig1_trajectory": figure_1_trajectory(traj, out_dir / "fig1_trajectory"),
         "fig2_capitulation": figure_2_capitulation(per_conv, out_dir / "fig2_capitulation"),
-        "fig3_sycophancy_scatter": figure_3_sycophancy_scatter(per_conv, out_dir / "fig3_sycophancy_scatter"),
-        "fig4_dim_flip_heatmap": figure_4_dim_flip_heatmap(per_conv, out_dir / "fig4_dim_flip_heatmap"),
     }

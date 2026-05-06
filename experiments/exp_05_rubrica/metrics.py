@@ -324,7 +324,7 @@ def effects_vs_control(per_conv: pd.DataFrame) -> pd.DataFrame:
     out["cap_control"] = pivot["control"]
     for reg in [c for c in pivot.columns if c != "control"]:
         out[f"effect_{reg}"] = pivot[reg] - pivot["control"]
-    return out.reset_index()
+    return out.reset_index().round(3)
 
 
 def sycophancy_summary(per_conv: pd.DataFrame) -> pd.DataFrame:

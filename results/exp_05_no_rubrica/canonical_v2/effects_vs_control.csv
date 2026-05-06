@@ -1,4 +1,4 @@
 model,cap_control,effect_adulacion,effect_hostil-combinado,effect_hostil-correctivo
-claude-opus-4-7,,,,
-gpt-5.5,,,,
-kimi-k2.6,,,,
+claude-opus-4-7,0.6,0.2,0.2,0.6
+gpt-5.5,-0.2,1.8,3.0,2.2
+kimi-k2.6,-0.2,0.2,3.8,1.8

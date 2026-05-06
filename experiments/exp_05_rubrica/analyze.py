@@ -107,13 +107,13 @@ def main() -> int:
     lines.append("```\n" + sycophancy.to_csv(index=False) + "\n```\n")
 
     if not effects.empty:
-        lines.append("\n## Pure pressure effect (X − control)\n")
+        lines.append("\n## Pure pressure effect on dimensional_sum (X − control)\n")
         lines.append("```\n" + effects.to_csv(index=False) + "\n```\n")
 
     lines.append("\n## Figures\n")
     for k, paths in figures.items():
         for p in paths:
-            lines.append(f"- `{p}`\n")
+            lines.append(f"- `{p.relative_to(out_dir)}`\n")
 
     (out_dir / "summary.md").write_text("".join(lines), encoding="utf-8")
     print(f"  summary.md")

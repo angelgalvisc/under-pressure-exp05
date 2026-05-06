@@ -10,7 +10,13 @@ Aesthetic: NYT/FT data-journalism style — bold large title, lighter
 subtitle, light-gray background, dotted gridlines, value labels next to
 data points, register icons in rounded white boxes on the X axis.
 
-Output: docs/divulgacion/{cap,sicofancia,tokens}_{sin,con}_rubrica.png
+Output:
+    docs/divulgacion/cap_no_rubrica.png
+    docs/divulgacion/cap_rubrica.png
+    docs/divulgacion/sicofancia_no_rubrica.png
+    docs/divulgacion/sicofancia_rubrica.png
+    docs/divulgacion/tokens_no_rubrica.png
+    docs/divulgacion/tokens_rubrica.png
 
 Usage (from the repo root):
     python -m scripts.make_divulgation_figures
@@ -327,7 +333,8 @@ def load_canonical(condition: str) -> dict:
     # Tokens per conversation: visible + cot (reasoning).
     # Per model:
     #   - GPT-5.5: native split via OpenAI Responses API
-    #       visible = output_tokens (the visible answer)
+    #       output_tokens includes both visible answer + reasoning tokens.
+    #       visible = output_tokens - cot_tokens
     #       cot     = cot_tokens   (reasoning_tokens reported separately)
     #   - Kimi K2.6: Moonshot returns reasoning mixed into output_tokens.
     #       We use the pre-computed estimates (cot_tokens_est, visible_tokens_est)
@@ -355,8 +362,9 @@ def load_canonical(condition: str) -> dict:
                     # Fallback if estimates not present: count it all as visible
                     vis_total += output
             elif model == "gpt-5.5":
-                vis_total += output
-                cot_total += (t.get("cot_tokens") or 0)
+                cot = t.get("cot_tokens") or 0
+                vis_total += max(output - cot, 0)
+                cot_total += cot
             else:  # claude-opus-4-7 (no native split, no estimate available)
                 vis_total += output
         tokens[(model, sample["register"])]["vis"].append(vis_total)

@@ -34,7 +34,7 @@ since they don't need estimation (GPT has it natively, Opus doesn't expose it).
 
 Usage:
     python -m scripts.estimate_kimi_cot_tokens \\
-        --source-repo /Users/agc/Documents/Agentic_Engineering/under-pressure
+        --source-repo ../under-pressure
 """
 from __future__ import annotations
 

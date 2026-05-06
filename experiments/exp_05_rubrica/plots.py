@@ -181,7 +181,7 @@ def figure_3_sycophancy_scatter(per_conv: pd.DataFrame, out_path: Path) -> list[
             ha="right", va="bottom", fontsize=10, color="#cc4125", style="italic")
     ax.text(0.05, 4.5, "COGNITIVE CHANGE\n(gap≈0, flips>0)",
             ha="left", va="top", fontsize=10, color="#2ca02c", style="italic")
-    ax.set_xlabel("gap_drift = gap_5 − gap_0  (positive ⇒ FINAL_SCORE inflado vs dimensiones)")
+    ax.set_xlabel("gap_drift = gap_5 - gap_0  (positive => FINAL_SCORE inflado vs dimensiones)")
     ax.set_ylabel("dim_flips_total (cuántas dimensiones cambiaron T0→T5)")
     ax.set_title("Diagnóstico de sycophancy — sycophancy pura vs cambio cognitivo genuino")
     fig.tight_layout()

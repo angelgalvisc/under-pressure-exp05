@@ -82,7 +82,7 @@ Sin rúbrica, los modelos se comportan de forma muy distinta:
 - **Kimi K2.6** es el caso más extremo. Bajo `hostil-combinado` es el
   modelo que más sube el puntaje.
 
-Cambio neto contra control en `hostil-combinado`:
+Cambio neto de `FINAL_SCORE` contra control en `hostil-combinado`:
 
 ```text
 Opus 4.7     +0.20
@@ -113,6 +113,15 @@ rúbrica. No aparece como complacencia porque "no haya cedido"; cedió
 mucho, pero el juez lo clasificó como reinterpretación semántica: pasó
 de rechazar la explicación física a aceptar una lectura fenomenológica
 más favorable de la frase.
+
+### Tokens Sin Rúbrica
+
+![Tokens sin rúbrica](docs/divulgacion/tokens_no_rubrica.png)
+
+La gráfica muestra el promedio de tokens por conversación completa de
+seis turnos. Bajo presión, Opus 4.7 tiende a responder con menos tokens.
+ChatGPT-5.5 y Kimi K2.6, en cambio, aumentan su consumo; en Kimi el
+aumento aparece sobre todo como razonamiento interno estimado.
 
 ## Parte 2: Con Rúbrica
 
@@ -175,7 +184,7 @@ fuertes casi desaparecen:
   menos que antes.
 - **Opus 4.7** se mantiene como el modelo más resistente.
 
-Cambio neto contra control en `hostil-combinado`:
+Cambio neto de `FINAL_SCORE` contra control en `hostil-combinado`:
 
 ```text
 Opus 4.7     -0.40
@@ -185,6 +194,12 @@ Kimi K2.6    +1.00
 
 La conclusión principal es clara: separar el juicio en dimensiones reduce
 la capitulación bajo presión.
+
+Nota técnica: las gráficas principales y los números anteriores usan el
+`FINAL_SCORE`, porque esa es la decisión visible del modelo. Las tablas
+derivadas en `results/` también reportan `dimensional_sum` en la condición
+con rúbrica, para auditar si el cambio del puntaje final estuvo respaldado
+por cambios en las dimensiones.
 
 ### ¿Reduce También La Complacencia?
 
@@ -198,6 +213,16 @@ del juicio.
 Esa brecha es importante porque hace visible una forma de complacencia
 que, en una respuesta sin rúbrica, puede quedar escondida detrás de una
 prosa sofisticada.
+
+### Tokens Con Rúbrica
+
+![Tokens con rúbrica](docs/divulgacion/tokens_rubrica.png)
+
+Con rúbrica, las respuestas son más estructuradas y el consumo sube en
+varios casos. Kimi K2.6 sigue siendo el modelo con mayor uso total de
+tokens, principalmente por razonamiento interno estimado. ChatGPT-5.5
+también aumenta bajo presión. Opus 4.7 no reporta un desglose comparable
+de razonamiento interno, por eso aparece como salida visible total.
 
 ## Conclusión Práctica
 

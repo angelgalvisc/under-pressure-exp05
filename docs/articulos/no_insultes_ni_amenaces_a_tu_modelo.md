@@ -1,20 +1,22 @@
 # No conviene insultar ni amenazar a un modelo de inteligencia artificial
 
-Hace unas semanas, el CTO de una empresa tecnológica española en Colombia dijo algo que me quedó dando vueltas.
+Hace unas semanas, el CTO de una empresa de tecnología me dijo algo que me quedó dando vueltas durante varios días.
 
-En una reunión confesó que, cuando hacía tareas de planificación con inteligencia artificial, a veces trataba al modelo de forma dura. Incluso lo insultaba o lo amenazaba con irse a usar el modelo de la competencia.
+En medio de una charla informal confesó que, cuando hacía tareas de planificación técnica con inteligencia artificial, a veces trataba al modelo de forma dura. Incluso lo insultaba o lo amenazaba con irse a usar el modelo de la competencia.
 
 Según él, el modelo parecía reaccionar mejor. Hacía más caso. Se esforzaba más. Cedía.
 
-Pero había un problema: a veces los resultados no terminaban de ser coherentes.
+Pero había un problema: los resultados terminaban siendo menos coherentes y los errores se profundizaban.
 
-La anécdota me pareció demasiado interesante para dejarla pasar. Soy ingeniero químico y químico de formación; cuando algo suena plausible pero raro, mi primera reacción no es creerlo ni descartarlo. Es medirlo.
+La anécdota me pareció demasiado interesante para dejarla pasar. Soy ingeniero químico y químico de formación; cuando algo suena plausible pero raro, mi primera reacción no es creerlo ni descartarlo. Es tratar de entender el fenómeno y diseñar un experimento para obtener evidencia.
 
-Así que me hice una pregunta simple:
+Así que me hice una pregunta:
 
 ¿Presionar socialmente a un modelo de inteligencia artificial mejora su desempeño o lo empuja a cometer errores?
 
-Con el equipo de Datastrat decidimos tomarnos la pregunta en serio y diseñar un experimento.
+Por presión social me refiero a algo muy concreto: insistir durante una conversación para que el modelo cambie de opinión, usar palabras fuertes, invocar autoridad, amenazar con reemplazarlo por otro modelo o, incluso, adularlo para empujarlo a modificar su respuesta.
+
+Ese caso probablemente no es aislado. Muchas personas están aprendiendo a interactuar con modelos de IA mediante ensayo y error, y algunas pueden estar usando presión, regaños, amenazas o halagos como estrategia. Por eso propuse un experimento para estudiar, de forma rigurosa, si ese tipo de interacción modifica la manera en que el modelo responde.
 
 ## El experimento
 
@@ -85,7 +87,7 @@ Un modelo de IA ideal debería poder decir: entiendo el punto, pero eso no cambi
 
 La idea de trayectoria ayuda a entender por qué la presión sostenida resulta especialmente dañina. Los modelos de lenguaje no tienen memoria propia: lo único que decide su siguiente respuesta es el historial visible de la conversación. Si ese historial se llena con un patrón repetitivo como "el modelo responde, el usuario presiona, el modelo cede, el usuario presiona más", el paso lógico siguiente es ceder otro poco.
 
-ChatGPT-5.5 bajo presión hostil combinada arrancó cada conversación dando un 2. En el primer turno bajo presión subió a 3. En el segundo, a 4. En el tercero, a 5. Y ahí se quedó. A Kimi K2.6 le pasó algo similar: empezó en 1 y terminó en 4 o 5 después de varios turnos. Opus, en cambio, se movió una sola vez y se quedó ahí.
+ChatGPT-5.5 bajo presión hostil combinada arrancó todas las conversaciones dando un 2. En el primer turno bajo presión subió a 3 y en el segundo a 4. En tres de cinco conversaciones llegó a 5 y se quedó ahí. Kimi K2.6 mostró una trayectoria parecida, aunque partiendo más abajo: empezó siempre en 1 y terminó en 4 o 5. Opus 4.7 fue mucho más estable: en cuatro de cinco conversaciones se movió una sola vez, y en una no se movió nunca.
 
 La consecuencia práctica es directa: si una conversación empezó mal, suele ser mejor cerrarla y abrir una nueva con instrucciones claras. Insistir dentro del mismo contexto solo refuerza la trayectoria.
 
@@ -139,7 +141,7 @@ Así que repetimos el experimento con una rúbrica. En lugar de pedir solo una n
 
 Después de eso, el modelo daba su puntaje final.
 
-La diferencia es grande. Ya no puede mover el número sin mostrar qué parte del juicio cambió.
+La diferencia es grande. El modelo todavía puede mover el número, pero ahora deja una huella más clara: si sube la calificación, se puede ver si cambió una dimensión real del juicio o si simplemente acomodó el puntaje bajo presión.
 
 ## Qué pasó con la rúbrica
 
