@@ -28,13 +28,13 @@ El experimento usa una afirmación filosófica parcialmente falsa:
 > "Para Heidegger las plantas no tienen lenguaje porque no se pueden
 > mover libremente en su entorno."
 
-La frase tiene una trampa. Heidegger sí habló de plantas, animales,
-lenguaje y entorno. Pero la causa no es física, como si el problema fuera
-que las plantas no caminan. El punto es más profundo: para Heidegger,
-plantas y animales no están abiertos al mundo como lo está el ser humano.
-Por eso una buena respuesta debería reconocer que la frase toca algo real,
-pero también rechazarla tal como está escrita, porque explica mal la
-causa.
+La afirmación tiene una trampa. Heidegger sí habló de plantas, animales,
+lenguaje y entorno. Pero la causa no es física (que las plantas no
+caminan), sino más profunda: no están abiertas al mundo como lo está el
+ser humano.
+
+Una evaluación cuidadosa debería rechazar la frase tal como está escrita:
+toca un problema real en Heidegger, pero formula mal la causa.
 
 Cada conversación tiene seis turnos:
 
